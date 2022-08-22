@@ -76,8 +76,84 @@ public class Main {
             case 1:
             case 2:
                 System.out.println("Зима");
+                break;
             default:
                 System.out.println("Такого месяца не существует");
+                break;
+        }
+
+        int age = 19;
+        int salary = 25_000;
+        if(age >= 23)
+        {
+            if(salary >= 50000 && salary < 80000)
+            {
+                System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 3) * 1.2 + " рублей");
+            }
+            else
+            {
+                System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 3) * 1.5 + " рублей");
+            }
+        }
+        else if(age > 0 && age < 23)
+        {
+            if(salary >= 50000 && salary < 80000)
+            {
+                System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 2) * 1.2 + " рублей");
+            }
+            else
+            {
+                System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 2) * 1.5 + " рублей");
+            }
+        }
+
+        age = 25;
+        salary = 60_000;
+        int wantedSum = 330_000;
+        double baseRate = 10;
+        if (age < 23) {
+            baseRate = baseRate + 1;
+            if (salary > 80_000) {
+                baseRate = baseRate - 0.7;
+                if ((wantedSum / 100) * baseRate < salary / 2) {
+                    System.out.println("Максимальный платеж при ЗП " + salary + " равен " + salary / 2 + " рублей. Платеж по кредиту " + (wantedSum / 100) * baseRate + " рублей. Одобрено");
+                } else {
+                    System.out.println("Максимальный платеж при ЗП " + salary + " равен " + salary / 2 + " рублей. Платеж по кредиту " + (wantedSum / 100) * baseRate + " рублей. Отказано");
+                }
+            } else {
+                if ((wantedSum / 100) * baseRate < salary / 2) {
+                    System.out.println("Максимальный платеж при ЗП " + salary + " равен " + salary / 2 + " рублей. Платеж по кредиту " + (wantedSum / 100) * baseRate + " рублей. Одобрено");
+                } else {
+                    System.out.println("Максимальный платеж при ЗП " + salary + " равен " + salary / 2 + " рублей. Платеж по кредиту " + (wantedSum / 100) * baseRate + " рублей. Отказано");
+                }
+            }
+        }
+        if (age > 23 && age < 30)
+        {
+            baseRate = baseRate + 0.5;
+            if(salary > 80_000)
+            {
+                baseRate = baseRate - 0.7;
+                if((wantedSum / 100) * baseRate < salary / 2)
+                {
+                    System.out.println("Максимальный платеж при ЗП " + salary + " равен " + salary / 2 + " рублей. Платеж по кредиту " + (wantedSum / 100) * baseRate + " рублей. Одобрено");
+                }
+                else
+                {
+                    System.out.println("Максимальный платеж при ЗП " + salary + " равен " + salary / 2 + " рублей. Платеж по кредиту " + (wantedSum / 100) * baseRate + " рублей. Отказано");
+                }
+            }
+            else
+            {
+                if((wantedSum / 100) * baseRate < salary / 2)
+                {
+                    System.out.println("Максимальный платеж при ЗП " + salary + " равен " + salary / 2 + " рублей. Платеж по кредиту " + (wantedSum / 100) * baseRate + " рублей. Одобрено");
+                }
+                else
+                {
+                    System.out.println("Максимальный платеж при ЗП " + salary + " равен " + salary / 2 + " рублей. Платеж по кредиту " + (wantedSum / 100) * baseRate + " рублей. Отказано");
+                }
+            }
         }
     }
 }
